@@ -20,9 +20,14 @@ public class Esperando extends HandlerEstado {
 	}
 
 	@Override
-	public void parar() throws UnsupportedOperationException {
+	public void enviar(String msg) throws UnsupportedOperationException {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Estado getEstado() {
+		return Estado.ESPERANDO;
 	}
 
 	@Override
@@ -32,7 +37,7 @@ public class Esperando extends HandlerEstado {
 	}
 
 	@Override
-	public void enviar(String msg) throws UnsupportedOperationException {
+	public void parar() throws UnsupportedOperationException {
 		// TODO Auto-generated method stub
 		
 	}
@@ -41,11 +46,6 @@ public class Esperando extends HandlerEstado {
 	public void recibir(int respuesta) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public Estado getEstado() {
-		return Estado.ESPERANDO;
 	}
 
 }

@@ -11,14 +11,6 @@ public class Conexion {
 		this.link = link;
 	}
 	
-	public Estado getEstado(){
-		return handlerEstado.getEstado();
-	}
-
-	public Link getLink() {
-		return link;
-	}
-
 	public void abrir() {
 		try {
 			handlerEstado.abrir();
@@ -34,13 +26,21 @@ public class Conexion {
 		}
 	}
 
-	public void parar() {
+	public void enviar(String msg) {
 		try {
-			handlerEstado.parar();
+			handlerEstado.enviar(msg);
 		} catch (UnsupportedOperationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public Estado getEstado(){
+		return handlerEstado.getEstado();
+	}
+
+	public Link getLink() {
+		return link;
 	}
 
 	public void iniciar() {
@@ -52,9 +52,9 @@ public class Conexion {
 		}
 	}
 
-	public void enviar(String msg) {
+	public void parar() {
 		try {
-			handlerEstado.enviar(msg);
+			handlerEstado.parar();
 		} catch (UnsupportedOperationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

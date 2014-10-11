@@ -7,11 +7,6 @@ public class Parado extends HandlerEstado {
 	}
 
 	@Override
-	public Estado getEstado() {
-		return Estado.PARADO;
-	}
-
-	@Override
 	public void abrir(){
 		throw new UnsupportedOperationException("wefwef");
 	}
@@ -23,9 +18,14 @@ public class Parado extends HandlerEstado {
 	}
 
 	@Override
-	public void parar() throws UnsupportedOperationException {
+	public void enviar(String msg) throws UnsupportedOperationException {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Estado getEstado() {
+		return Estado.PARADO;
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class Parado extends HandlerEstado {
 	}
 
 	@Override
-	public void enviar(String msg) throws UnsupportedOperationException {
+	public void parar() throws UnsupportedOperationException {
 		// TODO Auto-generated method stub
 		
 	}
