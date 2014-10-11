@@ -9,12 +9,13 @@ public class MainFactoryMethod {
 	private static Logger LOG = LogManager.getLogger(MainFactoryMethod.class);
 	
 	public static void main (String args []){
-		NaturalNumberManager naturalNumberManager = new NaturalNumberManager(new NaturalNumberESCreator());
+		NaturalNumberManager naturalNumberManager = new NaturalNumberManager();
+		naturalNumberManager.setNaturalNumberCreator(new NaturalNumberESCreator());
 		NaturalNumber naturalNumber = naturalNumberManager.createNaturalNumber(1);
 		System.out.println(naturalNumber.getTextValue());
 		
 
-		naturalNumberManager = new NaturalNumberManager(new NaturalNumberENCreator());
+		naturalNumberManager.setNaturalNumberCreator(new NaturalNumberENCreator());
 		naturalNumber = naturalNumberManager.createNaturalNumber(2);
 		System.out.println(naturalNumber.getTextValue());
 	}
