@@ -2,71 +2,50 @@ package es.upm.miw.pd.state.connection;
 
 public class Conexion {
 
-	private HandlerEstado handlerEstado;
+    private HandlerEstado handlerEstado;
 
-	private Link link;
+    private Link link;
 
-	public Conexion(Link link) {
-		assert link != null;
-		this.link = link;
-	}
-	
-	public void abrir() {
-		try {
-			handlerEstado.abrir();
-		} catch (UnsupportedOperationException e) {
-			
-		}
-	}
+    public Conexion(Link link) {
+        assert link != null;
+        this.link = link;
+        this.setHandlerEstado(new Cerrado(this));
+    }
 
-	public void cerrar() {
-		try {
-			handlerEstado.cerrar();
-		} catch (UnsupportedOperationException e) {
-		}
-	}
+    public void abrir() {
+        handlerEstado.abrir();
+    }
 
-	public void enviar(String msg) {
-		try {
-			handlerEstado.enviar(msg);
-		} catch (UnsupportedOperationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+    public void cerrar() {
+        handlerEstado.cerrar();
+    }
 
-	public Estado getEstado(){
-		return handlerEstado.getEstado();
-	}
+    public void enviar(String msg) {
+        handlerEstado.enviar(msg);
+    }
 
-	public Link getLink() {
-		return link;
-	}
+    public Estado getEstado() {
+        return handlerEstado.getEstado();
+    }
 
-	public void iniciar() {
-		try {
-			handlerEstado.iniciar();
-		} catch (UnsupportedOperationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+    public Link getLink() {
+        return link;
+    }
 
-	public void parar() {
-		try {
-			handlerEstado.parar();
-		} catch (UnsupportedOperationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+    public void iniciar() {
+        handlerEstado.iniciar();
+    }
 
-	public void recibir(int respuesta) {
-		try {
-			handlerEstado.recibir(respuesta);
-		} catch (UnsupportedOperationException e) {
-			throw new UnsupportedOperationException(e.getMessage());
-		}
-	}
+    public void parar() {
+        handlerEstado.parar();
+    }
+
+    public void recibir(int respuesta) {
+        handlerEstado.recibir(respuesta);
+    }
+
+    protected void setHandlerEstado(HandlerEstado handlerEstado) {
+        this.handlerEstado = handlerEstado;
+    }
 
 }

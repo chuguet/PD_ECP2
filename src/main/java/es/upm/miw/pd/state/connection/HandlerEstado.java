@@ -25,4 +25,5 @@ public abstract class HandlerEstado {
     public abstract void parar();
 
     public abstract void recibir(int respuesta);
+
 }
