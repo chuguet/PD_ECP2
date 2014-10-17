@@ -1,25 +1,22 @@
 package es.upm.miw.pd.calculadora;
 
-import java.util.HashMap;
-import java.util.Map;
+import upm.jbb.IO;
 
-public class CalculadoraMementable<T> {
+public class CalculadoraMementable extends Calculadora {
 
-	private Map<String, T> puntosRestauracion;
+    private GestorMementable<MementoCalculadora> calculadoraMementable;
 	
-	public CalculadoraMementable(){
-		this.puntosRestauracion = new HashMap<String, T>();
-	}
-	
-	public void addMemento(String key, T memento){
-		puntosRestauracion.put(key, memento);
-	}
-	
-	public String[] claves(){
-		return puntosRestauracion.keySet().toArray(new String[0]);
-	}
-	
-	public T getMemento(String key){
-		return puntosRestauracion.get(key);
+    public CalculadoraMementable(){
+    	super();
+    	calculadoraMementable = new GestorMementable<MementoCalculadora>();
+    }
+    
+	public void guardar(String key){
+    	calculadoraMementable.addMemento(key, new MementoCalculadora(this.getTotal()));
+    }
+
+	public void deshacer() {
+		String key = (String) IO.in.select(calculadoraMementable.claves());
+    	this.setTotal(calculadoraMementable.getMemento(key).getValor());
 	}
 }
