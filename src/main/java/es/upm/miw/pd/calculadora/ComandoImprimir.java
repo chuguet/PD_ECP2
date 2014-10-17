@@ -2,17 +2,10 @@ package es.upm.miw.pd.calculadora;
 
 import upm.jbb.IO;
 
-public class ComandoImprimir implements Comando {
+public class ComandoImprimir extends ComandoAbstracto {
 
-	private Calculadora calculadora;
-	
-	public ComandoImprimir(Calculadora calculadora){
-		this.calculadora = calculadora;
-	}
-	
-	@Override
-	public String name() {
-		return "IMPRIMIR";
+	public ComandoImprimir(Calculadora calculadora) {
+		super(calculadora, "IMPRIMIR");
 	}
 
 	@Override

@@ -2,22 +2,15 @@ package es.upm.miw.pd.calculadora;
 
 import upm.jbb.IO;
 
-public class ComandoSumar implements Comando {
-
-	private Calculadora calculadora;
+public class ComandoSumar extends ComandoAbstracto {
 	
-	public ComandoSumar(Calculadora calculadora){
-		this.calculadora = calculadora;
-	}
-	
-	@Override
-	public String name() {
-		return "SUMAR";
+	public ComandoSumar(Calculadora calculadora) {
+		super(calculadora, "SUMAR");
 	}
 
 	@Override
 	public void execute() {
-		calculadora.restar(IO.in.readInt("Introduzca el valor a sumar"));
+		calculadora.sumar(IO.in.readInt("Introduzca el valor a sumar"));
 	}
 
 }

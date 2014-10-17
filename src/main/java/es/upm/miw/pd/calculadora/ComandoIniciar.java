@@ -1,16 +1,9 @@
 package es.upm.miw.pd.calculadora;
 
-public class ComandoIniciar implements Comando {
+public class ComandoIniciar extends ComandoAbstracto {
 
-	private Calculadora calculadora;
-	
-	public ComandoIniciar(Calculadora calculadora){
-		this.calculadora = calculadora;
-	}
-	
-	@Override
-	public String name() {
-		return "INICIAR";
+	public ComandoIniciar(Calculadora calculadora) {
+		super(calculadora, "INCIAR");
 	}
 
 	@Override

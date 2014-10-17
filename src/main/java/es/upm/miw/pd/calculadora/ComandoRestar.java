@@ -2,17 +2,10 @@ package es.upm.miw.pd.calculadora;
 
 import upm.jbb.IO;
 
-public class ComandoRestar implements Comando {
-
-	private Calculadora calculadora;
+public class ComandoRestar extends ComandoAbstracto {
 	
-	public ComandoRestar(Calculadora calculadora){
-		this.calculadora = calculadora;
-	}
-	
-	@Override
-	public String name() {
-		return "RESTAR";
+	public ComandoRestar(Calculadora calculadora) {
+		super(calculadora, "RESTAR");
 	}
 
 	@Override
