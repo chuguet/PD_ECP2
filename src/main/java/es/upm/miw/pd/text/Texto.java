@@ -14,7 +14,7 @@ public class Texto extends Compuesto {
 	@Override
 	public String dibujar(Boolean enMayusculas) {
 		String resultado = super.dibujarGenerico(enMayusculas);
-		resultado += "---o---";
+		resultado += "---o---\n";
 		return resultado;
 	}
 

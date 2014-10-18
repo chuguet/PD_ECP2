@@ -10,7 +10,6 @@ public class Caracter extends Componente{
 	
 	@Override
 	public void add(Componente componente) {
-        throw new UnsupportedOperationException("Operacion no soportada");
 	}
 
 	@Override
