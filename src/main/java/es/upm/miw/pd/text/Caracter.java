@@ -4,6 +4,10 @@ public class Caracter extends Componente{
 
 	private Character caracter;
 	
+	public Caracter (char c){
+		this.caracter = c;
+	}
+	
 	@Override
 	public void add(Componente componente) {
         throw new UnsupportedOperationException("Operacion no soportada");

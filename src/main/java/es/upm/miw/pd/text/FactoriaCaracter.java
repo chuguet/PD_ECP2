@@ -12,7 +12,6 @@ public class FactoriaCaracter {
 	
 	private FactoriaCaracter(){
 		mapaCaracteres = new HashMap<Character, Caracter>();
-		factoriaCaracter = new FactoriaCaracter();
 	}
 	
 	public static FactoriaCaracter getFactoria() {
@@ -23,7 +22,12 @@ public class FactoriaCaracter {
 	}
 
 	public Caracter get(char c) {
-		return mapaCaracteres.get(new Character(c));
+		Caracter caracter = mapaCaracteres.get(new Character(c));
+		if(caracter == null){
+			caracter = new Caracter(Character.valueOf(c));
+			mapaCaracteres.put(Character.valueOf(c), caracter);
+		} 
+		return caracter;
 	}
 
 

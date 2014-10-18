@@ -6,7 +6,7 @@ public class Texto extends Compuesto {
 	public void add(Componente componente) {
 		if (!componente.isCompuesto()) {
 			throw new UnsupportedOperationException(
-					"No es un caracter y no se puede anadir");
+					"No es un texto o un parrafo y no se puede anadir");
 		}
 		super.getComponente().add(componente);
 	}
