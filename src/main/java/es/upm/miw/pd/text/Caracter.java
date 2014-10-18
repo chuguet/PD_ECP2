@@ -6,13 +6,16 @@ public class Caracter extends Componente{
 	
 	@Override
 	public void add(Componente componente) {
-		// TODO Auto-generated method stub
-		
+        throw new UnsupportedOperationException("Operacion no soportada");
 	}
 
 	@Override
 	public String dibujar(Boolean enMayusuculas) {
-		return caracter.toString();
+		if(enMayusuculas){
+			return caracter.toString().toUpperCase();
+		} else{
+			return caracter.toString();
+		}
 	}
 
 	@Override
