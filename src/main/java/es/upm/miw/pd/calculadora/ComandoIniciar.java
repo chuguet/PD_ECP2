@@ -8,7 +8,7 @@ public class ComandoIniciar extends ComandoAbstracto {
 
 	@Override
 	public void execute() {
-		calculadora.iniciar();
+		getCalculadora().iniciar();
 	}
 
 }

@@ -10,7 +10,7 @@ public class ComandoSumar extends ComandoAbstracto {
 
 	@Override
 	public void execute() {
-		calculadora.sumar(IO.in.readInt("Introduzca el valor a sumar"));
+		getCalculadora().sumar(IO.in.readInt("Introduzca el valor a sumar"));
 	}
 
 }
