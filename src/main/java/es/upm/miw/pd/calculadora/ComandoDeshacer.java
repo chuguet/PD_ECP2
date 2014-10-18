@@ -1,10 +1,9 @@
 package es.upm.miw.pd.calculadora;
 
+public class ComandoDeshacer extends ComandoAbstracto {
 
-public class ComandoDeshacer extends ComandoAbstracto{
-
-	public ComandoDeshacer(Calculadora calculadora) {
-		super(calculadora, "DESHACER");
+	public ComandoDeshacer(CalculadoraMementable calculadoraMementable) {
+		super(calculadoraMementable, "DESHACER");
 	}
 
 	@Override

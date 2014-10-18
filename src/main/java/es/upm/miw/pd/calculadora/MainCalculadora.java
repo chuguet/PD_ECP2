@@ -7,13 +7,12 @@ public class MainCalculadora {
     private GestorComandos gestor;
 
     public MainCalculadora() {
-        Calculadora calc = new Calculadora();
         CalculadoraMementable calcMem = new CalculadoraMementable();
         this.gestor = new GestorComandos();
-        this.gestor.add(new ComandoSumar(calc));
-        this.gestor.add(new ComandoRestar(calc));
-        this.gestor.add(new ComandoIniciar(calc));
-        this.gestor.add(new ComandoImprimir(calc));
+        this.gestor.add(new ComandoSumar(calcMem));
+        this.gestor.add(new ComandoRestar(calcMem));
+        this.gestor.add(new ComandoIniciar(calcMem));
+        this.gestor.add(new ComandoImprimir(calcMem));
         this.gestor.add(new ComandoDeshacer(calcMem));
         this.gestor.add(new ComandoGuardar(calcMem));
     }

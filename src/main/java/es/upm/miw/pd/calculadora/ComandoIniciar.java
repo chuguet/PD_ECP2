@@ -2,7 +2,7 @@ package es.upm.miw.pd.calculadora;
 
 public class ComandoIniciar extends ComandoAbstracto {
 
-	public ComandoIniciar(Calculadora calculadora) {
+	public ComandoIniciar(CalculadoraMementable calculadora) {
 		super(calculadora, "INCIAR");
 	}
 

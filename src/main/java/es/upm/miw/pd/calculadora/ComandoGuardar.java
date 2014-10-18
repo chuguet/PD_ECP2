@@ -4,8 +4,8 @@ import upm.jbb.IO;
 
 public class ComandoGuardar extends ComandoAbstracto {
 
-	public ComandoGuardar(Calculadora calculadora) {
-		super(calculadora, "GUARDAR");
+	public ComandoGuardar(CalculadoraMementable calculadoraMementable) {
+		super(calculadoraMementable, "GUARDAR");
 	}
 
 	@Override
