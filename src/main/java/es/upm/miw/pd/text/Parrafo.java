@@ -10,10 +10,12 @@ public class Parrafo extends Compuesto {
 		}
 		super.getComponente().add(componente);
 	}
-	
+
 	@Override
-	public String dibujar(Boolean enMayusuculas) {
-		return null;
+	public String dibujar(Boolean enMayusculas) {
+		String resultado = super.dibujarGenerico(enMayusculas);
+		resultado += "\n";
+		return resultado;
 	}
 
 }
